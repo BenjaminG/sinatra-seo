@@ -11,8 +11,10 @@ You should take into account that this library have the following dependencies:
 * [sinatra][2]
 
 ### Usage
-... description goes here...
-  
+This library requires you to define the basic SEO information such as the title, the description and the keywords for every page of your site on a separate file.
+
+...some more description out here... 
+
 ### Contributions
 Everybody is welcome to contribute to this project by commenting the source code, suggesting modifications or new ideas, reporting bugs, writing some documentation and, of course, you're also welcome to contribute with patches as well!
 
