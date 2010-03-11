@@ -45,7 +45,7 @@ describe Sinatra::Seo do
         
         eval("seo.#{page}").should be_an_instance_of(OpenStruct)
         
-        [:title, :description, :keywords].each do |atribute|
+        [:title, :description, :keywords].each do |attribute|
           eval("seo.#{page}.methods").include?(attribute).should be_true
           eval("seo.#{page}.methods").include?(:"#{attribute}=").should be_false
           eval("seo.#{page}.#{attribute}").should be_an_instance_of(String)
