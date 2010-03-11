@@ -1,13 +1,24 @@
 require 'sinatra/base'
 require 'yaml'
+require 'ostruct'
+
+class OpenStruct
+  def new_ostruct_member(name)
+    name = name.to_sym
+    
+    unless self.respond_to?(name)
+      class << self; self; end.class_eval do
+        define_method(name) {@table[name].is_a?(Hash) ? OpenStruct.new(@table[name]) : @table[name]}
+      end
+    end
+  end
+end
 
 module Sinatra
   module Seo
     module Helpers
       def seo
-        @seo ||= begin
-          @seo = YAML.parse_file(app.seo_file)
-        end
+        @seo ||= OpenStruct.new(YAML.load_file(app.seo_file))
       end
     end
     
