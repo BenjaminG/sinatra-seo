@@ -30,12 +30,14 @@ describe Sinatra::Seo do
     end
     
     it "then the :seo_file option should contain the path to the SEO file." do
-      File.exist?('./test.seo').should be_true
-      File.extname(app.seo_file).should == '.seo'
-      
       app.seo_file.should_not be_nil
       app.seo_file.should be_an_instance_of(String)
       app.seo_file.should == './test.seo'
+    end
+    
+    it "then the defined :seo_file should exist and have the '.seo' extension." do
+      File.exist?('./test.seo').should be_true
+      File.extname(app.seo_file).should == '.seo'
     end
     
     it "then the seo helper method should include every page (with :title, :description and :keywords as sub-attributes) as a read-only attribute." do
