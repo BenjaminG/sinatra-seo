@@ -18,7 +18,8 @@ module Sinatra
   module Seo
     module Helpers
       def seo
-        @seo ||= OpenStruct.new(YAML.load_file(app.seo_file))
+        @seo ||= app.nil? ? OpenStruct.new(YAML.load_file(self.class.seo_file)) : 
+                            OpenStruct.new(YAML.load_file(app.seo_file))
       end
     end
     
