@@ -38,7 +38,7 @@ In case you would prefer to follow the **Modular** approach on your application 
     require 'sinatra/base'
     require 'sinatra/seo'
     
-    class App < Sinatra:Base
+    class App < Sinatra::Base
       register Sinatra::Seo
       
       set :seo_file, File.join(File.dirname(__FILE__), 'site.seo')
