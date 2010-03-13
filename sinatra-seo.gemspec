@@ -12,7 +12,7 @@ GEM = Gem::Specification.new do |specification|
   specification.description = <<-DESCRIPTION
     A Sinatra extension for integrating basic SEO into your Sinatra projects.
   DESCRIPTION
-  specification.add_runtime_dependency 'sinatra', '>= 1.0a'
+  specification.add_runtime_dependency 'sinatra', '>= 0.9.4'
   specification.add_development_dependency 'rspec', '>= 1.3.0'
   specification.add_development_dependency 'rcov', '>= 0.9.8'
   specification.add_development_dependency 'rack-test', '>= 0.5.3'
