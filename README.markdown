@@ -22,7 +22,13 @@ This library requires you to define the basic SEO information such as the title,
         description: my About description goes here.
         keywords: keyword4, keyword5, keyword6
         
-Please note that we are naming each page as named in your *views/* directory. The three attributes you're required to fill (**title**, **description** and **keywords**) should be strings.
+Please note that we are naming each page as named in your *views/* directory. The three attributes you're required to fill (**title**, **description** and **keywords**) should be strings and these attributes also should have a maximum of characters or words as detailed below:
+
+* the attribute **Title** should have a maximum of 60 characters.
+* the attribute **Description** should have a maximum of 160 characters.
+* the attribute **Keywords** should contain a maximum of 15 words.
+
+Even tough this limitation usually spark a discussion among SEO specialists, I've decided to use the minimum number in order to make sure all the data you define for your pages is parsed by the search engines.
 
 Now, as any other existing extension, there are two possible use cases in order to hook up your *site.seo* file to your application. If you follow the **Classic** approach, then you just need to require this extension in your *app.rb* file and then set the SEO file this extension should parse.
 
