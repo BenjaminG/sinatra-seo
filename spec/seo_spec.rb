@@ -54,7 +54,15 @@ describe Sinatra::Seo do
             eval("seo.#{page}.methods").include?(attribute).should be_true
             eval("seo.#{page}.methods").include?(:"#{attribute}=").should be_false
             eval("seo.#{page}.#{attribute}").should be_an_instance_of(String)
-            eval("seo.#{page}.#{attribute}").should == DATA[page][attribute]
+            
+            case attribute
+              when :title 
+                eval("seo.#{page}.#{attribute}").should == DATA[page][attribute][0, 60]
+              when :description
+                eval("seo.#{page}.#{attribute}").should == DATA[page][attribute][0, 160]
+              else 
+                eval("seo.#{page}.#{attribute}").should == DATA[page][attribute].split(" ")[0, 15].join(" ")
+            end
           end
         end
       end
