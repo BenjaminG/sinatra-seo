@@ -7,8 +7,8 @@ class OpenStruct
     name = name.to_sym
     
     @table[name] = case name
-      when :title then @table[name][0, 60]
-      when :description then @table[name][0, 160]
+      when :title then @table[name][0, 100]
+      when :description then @table[name][0, 260]
       when :keywords then @table[name].split(" ")[0, 15].join(" ")
       else @table[name]
     end
